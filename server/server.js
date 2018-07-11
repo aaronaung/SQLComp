@@ -15,30 +15,30 @@ const connectDB = (database) => {
     }
 
     var con = mysql.createConnection(dbCred);
-    con.connect((err) => { if(err) throw err; });
+    con.connect((err) => { if (err) throw err; });
     return con;
 }
 
 //Execute query on a database and returns a structured response;
 const execQuery = async (db, query) => {
     var response = {
-        database:  db.config.database,
+        database: db.config.database,
         status: "success",
         payload: []
     };
 
-    var response = await new Promise( (resolve) => {
+    var response = await new Promise((resolve) => {
         db.query(query, (err, results) => {
-            if(err) {
+            if (err) {
                 response.status = "error";
                 response.payload = err.sqlMessage;
-            }else{
+            } else {
                 response.payload = results;
             }
             resolve(response);
         })
     })
-    
+
     return response;
 }
 
@@ -56,7 +56,7 @@ app.get("/", (_, res) => res.send("Welcome to SQL Comp API! But it seems you are
 
 app.post("/api/executeQuery", async (req, res) => {
     var query = req.body.query;
-    res.json([await execQuery(db1, query), await execQuery(db2, query)]);
+    res.json(await Promise.all([execQuery(db1, query), execQuery(db2, query)]));
 })
 
 app.listen(config.API_PORT, () => console.log("SQL COMP APP LISTENING ON PORT 8000"))
