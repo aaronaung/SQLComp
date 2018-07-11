@@ -1,0 +1,8 @@
+{
+    "API_PORT": 8000,
+    "SQL_HOST" : "localhost", 
+    "SQL_USER" : "aaronaung",
+    "SQL_PASSWORD" : "Summer2018",
+    "DB1" : "db1",
+    "DB2" : "db2"
+}
