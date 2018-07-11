@@ -1,19 +1,22 @@
-# AUTHOR
+# Author
 [ Aaron Aung ]
 
-# RELEASE DATE
+# Release Date
 [ 7/10/2018 ]
 
-# DESCRIPTION
+# Description
 [ SQLComp performs data comparison between any two databases and highlights the mismatches ]
 
-# TOOLS USED
-[ Reactjs create-react-app Nodejs Express MySQL ]
+# Tools Used
+[ Reactjs, create-react-app, Nodejs, Express, MySQL ]
 
-# HOW TO START APP
-*Inside the sqlcomp directory*
-[ Run start_client.bat to start the Client server ]
+# Packages Used
+[ react-toastify, cors, body-parser ] 
+
+# How to start app
+*Inside the root directory* <br/>
+[ Run start_client.bat to start the Client server ] <br />
 [ Run start_api.bat to start the API server ] 
 
-# APPLICATION SETTINGS
-[ Go to app_config.json to modify the application parameters ]
+# Setting up your environments
+[ Go to app_config.json to modify the application environment parameters ]
